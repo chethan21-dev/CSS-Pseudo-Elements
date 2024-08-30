@@ -1,0 +1,250 @@
+CSS Pseudo-elements - 
+A CSS pseudo-element is used to style specified parts of an element.
+Example, it can be used for:
+Style the first letter, or line, of an element
+Insert content before, or after, the content of an element
+Syntax : 
+pseudo-elements:
+selector::pseudo-element {
+  property: value;
+}
+The ::first-line Pseudo-element
+The ::first-line pseudo-element is used to add a special style to the first line of a text.
+The following example formats the first line of the text in all <p> elements:
+Example -  
+p::first-line {
+  color: #ff0000;
+  font-variant: small-caps;
+}
+Note: The ::first-line pseudo-element can only be applied to block-level elements.
+
+The following properties apply to the ::first-line pseudo-element:
+    font properties
+    color properties
+    background properties
+    word-spacing
+    letter-spacing
+    text-decoration
+    vertical-align
+    text-transform
+    line-height
+    clear
+Notice the double colon notation - ::first-line versus :first-line
+1. The double colon replaced the single-colon notation for pseudo-elements in CSS3. This was an attempt from W3C to distinguish between pseudo-classes and pseudo-elements.
+2. The single-colon syntax was used for both pseudo-classes and pseudo-elements in CSS2 and CSS1.
+
+For backward compatibility, the single-colon syntax is acceptable for CSS2 and CSS1 pseudo-elements.
+1. The ::first-letter Pseudo-element.
+2. The ::first-letter pseudo-element is used to add a special style to the first letter of a text.
+
+The following example formats the first letter of the text in all <p> elements: 
+Example - 
+p::first-letter {
+  color: #ff0000;
+  font-size: xx-large;
+}
+Note: The ::first-letter pseudo-element can only be applied to block-level elements.
+
+The following properties apply to the ::first-letter pseudo- element: 
+    font properties
+    color properties 
+    background properties
+    margin properties
+    padding properties
+    border properties
+    text-decoration
+    vertical-align (only if "float" is "none")
+    text-transform
+    line-height
+    float
+    clear
+
+Pseudo-elements and HTML Classes
+Pseudo-elements can be combined with HTML classes: 
+Example
+p.intro::first-letter {
+  color: #ff0000;
+  font-size: 200%;
+}
+
+1. The example above will display the first letter of paragraphs with class="intro", in red and in a larger size.
+Multiple Pseudo-elements
+Several pseudo-elements can also be combined.
+
+In the following example, the first letter of a paragraph will be red, in an xx-large font size. The rest of the first line will be blue, and in small-caps. The rest of the paragraph will be the default font size and color:
+Example - 
+p::first-letter {
+  color: #ff0000;
+  font-size: xx-large;
+}
+p::first-line {
+  color: #0000ff;
+  font-variant: small-caps;
+}
+A. CSS - The ::before Pseudo-element
+The ::before pseudo-element can be used to insert some content before the content of an element.
+The following example inserts an image before the content of each <h1> element:
+Example - 
+h1::before {
+  content: url(smiley.gif);
+}
+
+B. CSS - The ::after Pseudo-element
+The ::after pseudo-element can be used to insert some content after the content of an element.
+
+The following example inserts an image after the content of each <h1> element:
+Example - 
+h1::after {
+  content: url(smiley.gif);
+}
+
+C. CSS - The ::marker Pseudo-element
+The ::marker pseudo-element selects the markers of list items.
+The following example styles the markers of list items:
+Example
+::marker {
+  color: red;
+  font-size: 23px;
+}
+
+D. CSS - The ::selection Pseudo-element
+The ::selection pseudo-element matches the portion of an element that is selected by a user.
+The following CSS properties can be applied to ::selection: color, background, cursor, and outline.
+The following example makes the selected text red on a yellow background:
+Example - 
+::selection {
+  color: red;
+  background: yellow;
+}
+
+CSS all Pseudo Elements : 
+
+1. Selector- 	
+::after 	
+Example - 
+p::after
+
+Code : 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p::after { 
+  content: " - Remember this";
+}
+</style>
+</head>
+<body>
+<h1>Demo of the ::after selector</h1>
+<p>Set alarm at 6AM</p>
+</body>
+</html> 	
+
+2. Selector - ::before 	
+Example - 
+p::before
+Code : 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p::before {
+  content: "Read this -";
+}
+</style>
+</head>
+<body>
+<h1>Demo of the ::before selector</h1>
+<p>Please follow the rule and regulations</p>
+</body>
+</html> 
+
+3. Selector - ::first-letter
+Example -  p::first-letter 
+Code : 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p::first-letter {
+  font-size: 200%;
+  color: yellow;
+}
+</style>
+</head>
+<body>
+<h1>Demo of the ::first-letter selector</h1>
+<p>My name is Mahesh.</p>
+</body>
+</html>
+
+4. Selector - ::first-line
+Example - 
+p::first-line
+Code : 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p::first-line {
+  background-color: blue;
+}
+</style>
+</head>
+<body>
+<h1>Demo of the ::first-line selector</h1>
+<h2>Traffic Lights</h2>
+<p>When red light came means to stop the vechicles. Yellow/Orange means ready. Green means go</p>
+</body>
+</html> 
+
+5. Selector - 
+::marker 	
+Example - 
+::marker 
+Code :
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+::marker { 
+  color: grey;
+}
+</style>
+</head>
+<body>
+<h1>Demo of the ::marker selector</h1>
+<ul>
+  <li>Milk</li>
+  <li>Coffee</li>
+  <li>Tea</li>
+</ul>
+<ol>
+  <li>First</li>
+  <li>Second</li>
+  <li>Third</li>
+</ol>
+</body>
+</html>
+
+6. Selector - 
+::selection 	
+Example - 
+::selection 
+Code : 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+::selection {
+  color: pink;
+  background: yellow;
+}
+</style>
+</head>
+<body>
+<h1>Select some text on this page:</h1>
+<p>This is a paragraph.</p>
+<div>This is some text in a div element.</div>
+</body>
+</html>
